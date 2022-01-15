@@ -5,7 +5,7 @@
         <table role="presentation" bgcolor="#002858" border="0" cellpadding="0" cellspacing="0" align="center" style="border: none; border-spacing: 0;text-align: center;">
           <tr>
             <td style="padding: 42px 0 26px 0; background-color: #002858;text-align: center;">
-              <p style="font-family: sofia-pro, arial, sans-serif; font-size: 26px; color: #ffffff; margin: 0 auto;">Follow us on social media</p>
+              <p style="font-family: sofia-pro, arial, sans-serif; font-size: 26px; font-weight: 200; color: #ffffff; margin: 0 auto;">Follow us on social media</p>
             </td>
           </tr>
           <tr>
@@ -59,7 +59,11 @@
                       <br>
                       {{ site_settings.company_name }}, {{ site_settings.company_street_address_1 }}, {{ site_settings.company_street_address_2 }}, {{ site_settings.company_city }}, {{ site_settings.company_zip }}<br>{{ site_settings.company_state }}, <a href="tel:{{ module.company_phone_number }}"  style="color: #ffffff; text-decoration: none"> {{ module.company_phone_number }} </a>
                       <br>
-                      <a href="{{ unsubscribe_link_all }}" target="_blank" style="color: #ffffff; text-decoration: underline">Unsubscribe</a>&nbsp;&nbsp;&nbsp;<a href="https://www.arcadisgen.com/en/privacy-statement" target="_blank" style="color: #ffffff; text-decoration: underline">Manage preferences</a>
+                      {% set manage_preferences_href = module.manage_preferences_url.url.href %}
+                      {% if module.manage_preferences_url.url.type is equalto "EMAIL_ADDRESS" %}
+                        {% set manage_preferences_href = "mailto:" + manage_preferences_href %}
+                      {% endif %}
+                      <a href="{{ unsubscribe_link_all }}" target="_blank" style="color: #ffffff; text-decoration: underline">Unsubscribe</a>&nbsp;&nbsp;&nbsp;<a href="{{ manage_preferences_href }}" {% if module.manage_preferences_url.open_in_new_tab %}target="_blank"{% endif %} {% if module.manage_preferences_url.rel %}rel="{{ module.manage_preferences_url.rel }}"{% endif %} style="color: #ffffff; text-decoration: underline">Manage preferences</a>
                     </p>
                   </td>
                 </tr>
