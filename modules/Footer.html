@@ -1,100 +1,80 @@
-<div role="article" aria-roledescription="email" align="center" lang="en" style="text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; background-color: #002858;text-align: center;">
-  <table role="presentation" align="center" style="border: none; border-spacing: 0">
+<div role="article" aria-roledescription="email" lang="en" style="text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; background:#002858; background-color: #002858;">
+  <table role="presentation" style="width: 100%; border: none; border-spacing: 0; background:#002858; background-color: #002858;" align="center" bgcolor="#002858" cellspacing="0" cellpadding="0">
     <tr>
-      <td>
-        <table role="presentation" bgcolor="#002858" border="0" cellpadding="0" cellspacing="0" align="center" style="border: none; border-spacing: 0;text-align: center;">
-          <tr>
-            <td style="padding: 42px 0 26px 0; background-color: #002858;text-align: center;">
-              <p style="font-family: sofia-pro, arial, sans-serif; font-size: 26px; font-weight: 200; color: #ffffff; margin: 0 auto;">Follow us on social media</p>
-            </td>
-          </tr>
-          <tr>
-            <td align="center" style="padding: 0 0 26px 0; background-color: #002858;text-align: center;">
-              <table role="presentation" bgcolor="#002858" border="0" cellpadding="0" cellspacing="0" align="center">
-                <tr>
-                  <td>
-                    <table role="presentation" bgcolor="#002858" border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 32px;">
-                      <tr>
-                        <td>
-                          {% set li_href = module.linkedin_link.url.href %}
-                          {% if module.linkedin_link.url.type is equalto "EMAIL_ADDRESS" %}
-                            {% set li_href = "mailto:" + href %}
+      <td align="center" style="padding: 0 0 42px 0; background:#002858; background-color: #002858; color: #000000">
+        <!--[if mso]>
+          <table role="presentation" align="center" style="width:800px;">
+            <tr>
+              <td>
+                <![endif]-->
+                  <table role="presentation" style="width: 100%; max-width: 800px; min-width: 700px; border: none; border-spacing: 0; text-align: center; font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; color: #000000" align="center" bgcolor="#002858" cellspacing="0" cellpadding="0" >
+                    <tr>
+                      <td style="text-align: center; padding: 42px 0 26px 0;">
+                        <p style="font-family: sofia-pro, arial, sans-serif; font-size: 26px; font-weight: 300; color: #ffffff; margin: 0 auto;">Follow us on social media</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="padding: 0 0 26px 0; background-color: #002858;text-align: center;">
+                        <table role="presentation" bgcolor="#002858" border="0" cellpadding="0" cellspacing="0" align="center">
+                          <tr>
+                            <td>
+                              <table role="presentation" bgcolor="#002858" border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 32px;">
+                                <tr>
+                                  <td>
+                                    {% set li_href = module.linkedin_link.url.href %}
+                                    {% if module.linkedin_link.url.type is equalto "EMAIL_ADDRESS" %}
+                                      {% set li_href = "mailto:" + href %}
+                                    {% endif %}
+                                    <a href="{{ li_href }}" {% if module.linkedin_link.open_in_new_tab %}target="_blank"{% endif %} {% if module.linkedin_link.rel %}rel="{{ module.linkedin_link.rel }}"{% endif %} title="Follow us on LinkedIn" style="color: #ffffff !important; text-decoration: none">
+                                      <img src="https://2661559.fs1.hubspotusercontent-na1.net/hubfs/2661559/Teneo/Work%20from%20Anywhere%20-%20Lie%20Detector/LinkedIn.png" width="31" height="31" alt="Li" style="display: inline-block; color: #ffffff; width: 100%; height: auto"/>
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>
+                              <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 32px;">
+                                <tr>
+                                  <td>
+                                    {% set tw_href = module.twitter_link.url.href %}
+                                    {% if module.twitter_link.url.type is equalto "EMAIL_ADDRESS" %}
+                                      {% set tw_href = "mailto:" + href %}
+                                    {% endif %}
+                                    <a href="{{ tw_href }}" {% if module.twitter_link.open_in_new_tab %}target="_blank"{% endif %} {% if module.twitter_link.rel %}rel="{{ module.twitter_link.rel }}"{% endif %} title="Follow us on Twitter" style="color: #ffffff !important; text-decoration: none">
+                                      <img src="https://2661559.fs1.hubspotusercontent-na1.net/hubfs/2661559/Teneo/Work%20from%20Anywhere%20-%20Lie%20Detector/Twitter.png" width="31" height="31" alt="Tw" style="display: inline-block; color: #ffffff; width: 100%; height: auto"/>
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 0 30px; color: #ffffff; font-size: 12px">
+                        <p style="margin: 0; line-height: 20px; color: #ffffff !important; font-size: 12px !important; padding: 0; text-align: center;">
+                          Headquarters:
+                          <br>
+                          {{ site_settings.company_name }}, {{ site_settings.company_street_address_1 }}, {{ site_settings.company_street_address_2 }}, {{ site_settings.company_city }}, {{ site_settings.company_zip }}<br>{{ site_settings.company_state }}, <a href="tel:{{ module.company_phone_number }}"  style="color: #ffffff !important; text-decoration: none"> {{ module.company_phone_number }} </a>
+                          <br>
+                          {% set manage_preferences_href = module.manage_preferences_url.url.href %}
+                          {% if module.manage_preferences_url.url.type is equalto "EMAIL_ADDRESS" %}
+                            {% set manage_preferences_href = "mailto:" + manage_preferences_href %}
                           {% endif %}
-                          <a href="{{ li_href }}" {% if module.linkedin_link.open_in_new_tab %}target="_blank"{% endif %} {% if module.linkedin_link.rel %}rel="{{ module.linkedin_link.rel }}"{% endif %} title="Follow us on LinkedIn" style="color: #ffffff !important; text-decoration: none">
-                            <img src="https://2661559.fs1.hubspotusercontent-na1.net/hubfs/2661559/Teneo/Work%20from%20Anywhere%20-%20Lie%20Detector/LinkedIn.png" width="31" height="31" alt="Li" style="display: inline-block; color: #ffffff; width: 100%; height: auto"/>
-                          </a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>
-                    <table role="presentation" bgcolor="#002858" border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 32px;">
-                      <tr>
-                        <td>
-                          {% set tw_href = module.twitter_link.url.href %}
-                          {% if module.twitter_link.url.type is equalto "EMAIL_ADDRESS" %}
-                            {% set tw_href = "mailto:" + href %}
-                          {% endif %}
-                          <a href="{{ tw_href }}" {% if module.twitter_link.open_in_new_tab %}target="_blank"{% endif %} {% if module.twitter_link.rel %}rel="{{ module.twitter_link.rel }}"{% endif %} title="Follow us on Twitter" style="color: #ffffff !important; text-decoration: none">
-                            <img src="https://2661559.fs1.hubspotusercontent-na1.net/hubfs/2661559/Teneo/Work%20from%20Anywhere%20-%20Lie%20Detector/Twitter.png" width="31" height="31" alt="Tw" style="display: inline-block; color: #ffffff; width: 100%; height: auto"/>
-                          </a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 0 30px">
-              <table style="width: 100%" align="center">
-                <tr>
-                  <td style="color: #ffffff; font-size: 12px">
-                    <p style="margin: 0; line-height: 20px; color: #ffffff !important; font-size: 12px !important; padding: 0; text-align: center;">
-                      Headquarters:
-                      <br>
-                      {{ site_settings.company_name }}, {{ site_settings.company_street_address_1 }}, {{ site_settings.company_street_address_2 }}, {{ site_settings.company_city }}, {{ site_settings.company_zip }}<br>{{ site_settings.company_state }}, <a href="tel:{{ module.company_phone_number }}"  style="color: #ffffff !important; text-decoration: none"> {{ module.company_phone_number }} </a>
-                      <br>
-                      {% set manage_preferences_href = module.manage_preferences_url.url.href %}
-                      {% if module.manage_preferences_url.url.type is equalto "EMAIL_ADDRESS" %}
-                        {% set manage_preferences_href = "mailto:" + manage_preferences_href %}
-                      {% endif %}
-                      <a href="{{ unsubscribe_link_all }}" target="_blank" style="color: #ffffff !important; text-decoration: underline">Unsubscribe</a>&nbsp;&nbsp;&nbsp;<a href="{{ manage_preferences_href }}" {% if module.manage_preferences_url.open_in_new_tab %}target="_blank"{% endif %} {% if module.manage_preferences_url.rel %}rel="{{ module.manage_preferences_url.rel }}"{% endif %} style="color: #ffffff; text-decoration: underline">Manage preferences</a>
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding: 26px 30px 42px 30px; text-align: center;">
-                    {% set href = module.logo_link.url.href %}
-                    {% if module.logo_link.url.type is equalto "EMAIL_ADDRESS" %}
-                      {% set href = "mailto:" + href %}
-                    {% endif %}
-                    <a
-                      href="{{ href }}" 
-                      {% if module.logo_link.open_in_new_tab %}target="_blank"{% endif %}
-                      {% if module.logo_link.rel %}rel="{{ module.logo_link.rel }}"{% endif %}
-                      title="Visit the website"
-                      style="text-decoration: none"
-                    >
-                      {% set sizeAttrs = 'width="{{ module.logo_image.width }}" height="{{ module.logo_image.height }}"' %}
-                      {% if module.logo_image.size_type == 'auto' %}
-                        {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-                      {% elif module.logo_image.size_type == 'auto_custom_max' %}
-                        {% set sizeAttrs = 'width="{{ module.logo_image.max_width }}" height="{{ module.logo_image.max_height }}" style="max-width: 100%; height: auto;"' %}
-                      {% endif %}
-                      {% set loadingAttr = module.logo_image.loading != 'disabled' ? 'loading="{{ module.logo_image.loading }}"' : '' %}
-                      <img src="{{ module.logo_image.src }}" alt="{{ module.logo_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
+                          <a href="{{ unsubscribe_link_all }}" target="_blank" style="color: #ffffff !important; text-decoration: underline">Unsubscribe</a>&nbsp;&nbsp;&nbsp;<a href="{{ manage_preferences_href }}" {% if module.manage_preferences_url.open_in_new_tab %}target="_blank"{% endif %} {% if module.manage_preferences_url.rel %}rel="{{ module.manage_preferences_url.rel }}"{% endif %} style="color: #ffffff; text-decoration: underline">Manage preferences</a>
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                <!--[if mso]>
+              </td>
+            </tr>
+          </table>
+        <![endif]-->
       </td>
     </tr>
   </table>
