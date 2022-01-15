@@ -6,25 +6,25 @@
         <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
           <![endif]-->
           <div style="background:#474747;background-color:#474747;margin:0px auto;max-width:800px;padding-bottom:0px;">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;padding-bottom:0px;" >
+            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;padding-bottom:0px;background-color:#474747;" >
               <tbody>
                 <tr>
-                  <td style="direction:ltr;font-size:0px;padding:13px 20px 14px;text-align:center;vertical-align:top;" >
+                  <td style="background-color:#474747;direction:ltr;font-size:0px;padding:13px 20px 14px;text-align:center;vertical-align:top;" >
                     <!--[if mso | IE]>
                       <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                         <tr>
                           <td class="" style="vertical-align:top;width:800px;" >
                             <![endif]-->
-                              <div class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;" >
+                              <div class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;background-color:#474747;" >
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" >
                                   <tbody>
                                     <tr>
                                       <td  style="vertical-align:top;padding:0;">
                                         <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%" >
                                           <tr>
-                                            <td align="center" style="font-size:0px;padding:0;margin:0;padding-bottom:0px;word-break:break-word;" >
-                                              <div style="color: #ffffff; text-align: center; text-decoration: underline; font-size: 18px; font-family: sofia-pro, arial, sans-serif; font-weight: 300; letter-spacing: 1px;padding-bottom:0px;" >
-                                                <p style="padding-bottom:0px;margin:0px"><a href="{{view_as_page_url}}" data-viewaswebpage="true" target="_blank" style="color:#ffffff; text-decoration:underline;">View email in browser</a></p>
+                                            <td align="center" style="font-size:0px;padding:0;margin:0;padding-bottom:0px;word-break:break-word; background-color:#474747" >
+                                              <div style="background-color:#474747; color: #ffffff; text-align: center; text-decoration: underline; font-size: 18px; font-family: sofia-pro, arial, sans-serif; font-weight: 300; letter-spacing: 1px;padding-bottom:0px;" >
+                                                <p style="padding-bottom:0px;font-family: sofia-pro, arial, sans-serif;margin:0px"><a href="{{view_as_page_url}}" data-viewaswebpage="true" target="_blank" style="color:#ffffff; text-decoration:underline;font-family: sofia-pro, arial, sans-serif;"><span style="font-family: sofia-pro, arial, sans-serif;">View email in browser</span></a></p>
                                               </div>
                                             </td>
                                           </tr>
@@ -74,7 +74,7 @@
                           title="Visit the website"
                           style="text-decoration: none"
                         >
-                          {% set sizeAttrs = 'width="{{ module.logo_image.width }}" height="{{ module.logo_image.height }}"' %}
+                          {% set sizeAttrs = 'style="width: {{ module.logo_image.width }}px !important; height: auto;"' %}
                           {% if module.logo_image.size_type == 'auto' %}
                             {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
                           {% elif module.logo_image.size_type == 'auto_custom_max' %}
