@@ -20,7 +20,7 @@
                           {% if module.linkedin_link.url.type is equalto "EMAIL_ADDRESS" %}
                             {% set li_href = "mailto:" + href %}
                           {% endif %}
-                          <a href="{{ li_href }}" {% if module.linkedin_link.open_in_new_tab %}target="_blank"{% endif %} {% if module.linkedin_link.rel %}rel="{{ module.linkedin_link.rel }}"{% endif %} title="Follow us on LinkedIn" style="text-decoration: none">
+                          <a href="{{ li_href }}" {% if module.linkedin_link.open_in_new_tab %}target="_blank"{% endif %} {% if module.linkedin_link.rel %}rel="{{ module.linkedin_link.rel }}"{% endif %} title="Follow us on LinkedIn" style="color: #ffffff !important; text-decoration: none">
                             <img src="https://2661559.fs1.hubspotusercontent-na1.net/hubfs/2661559/Teneo/Work%20from%20Anywhere%20-%20Lie%20Detector/LinkedIn.png" width="31" height="31" alt="Li" style="display: inline-block; color: #ffffff; width: 100%; height: auto"/>
                           </a>
                         </td>
@@ -38,7 +38,7 @@
                           {% if module.twitter_link.url.type is equalto "EMAIL_ADDRESS" %}
                             {% set tw_href = "mailto:" + href %}
                           {% endif %}
-                          <a href="{{ tw_href }}" {% if module.twitter_link.open_in_new_tab %}target="_blank"{% endif %} {% if module.twitter_link.rel %}rel="{{ module.twitter_link.rel }}"{% endif %} title="Follow us on Twitter" style="text-decoration: none">
+                          <a href="{{ tw_href }}" {% if module.twitter_link.open_in_new_tab %}target="_blank"{% endif %} {% if module.twitter_link.rel %}rel="{{ module.twitter_link.rel }}"{% endif %} title="Follow us on Twitter" style="color: #ffffff !important; text-decoration: none">
                             <img src="https://2661559.fs1.hubspotusercontent-na1.net/hubfs/2661559/Teneo/Work%20from%20Anywhere%20-%20Lie%20Detector/Twitter.png" width="31" height="31" alt="Tw" style="display: inline-block; color: #ffffff; width: 100%; height: auto"/>
                           </a>
                         </td>
@@ -57,13 +57,13 @@
                     <p style="margin: 0; line-height: 20px; color: #ffffff !important; font-size: 12px !important; padding: 0; text-align: center;">
                       Headquarters:
                       <br>
-                      {{ site_settings.company_name }}, {{ site_settings.company_street_address_1 }}, {{ site_settings.company_street_address_2 }}, {{ site_settings.company_city }}, {{ site_settings.company_zip }}<br>{{ site_settings.company_state }}, <a href="tel:{{ module.company_phone_number }}"  style="color: #ffffff; text-decoration: none"> {{ module.company_phone_number }} </a>
+                      {{ site_settings.company_name }}, {{ site_settings.company_street_address_1 }}, {{ site_settings.company_street_address_2 }}, {{ site_settings.company_city }}, {{ site_settings.company_zip }}<br>{{ site_settings.company_state }}, <a href="tel:{{ module.company_phone_number }}"  style="color: #ffffff !important; text-decoration: none"> {{ module.company_phone_number }} </a>
                       <br>
                       {% set manage_preferences_href = module.manage_preferences_url.url.href %}
                       {% if module.manage_preferences_url.url.type is equalto "EMAIL_ADDRESS" %}
                         {% set manage_preferences_href = "mailto:" + manage_preferences_href %}
                       {% endif %}
-                      <a href="{{ unsubscribe_link_all }}" target="_blank" style="color: #ffffff; text-decoration: underline">Unsubscribe</a>&nbsp;&nbsp;&nbsp;<a href="{{ manage_preferences_href }}" {% if module.manage_preferences_url.open_in_new_tab %}target="_blank"{% endif %} {% if module.manage_preferences_url.rel %}rel="{{ module.manage_preferences_url.rel }}"{% endif %} style="color: #ffffff; text-decoration: underline">Manage preferences</a>
+                      <a href="{{ unsubscribe_link_all }}" target="_blank" style="color: #ffffff !important; text-decoration: underline">Unsubscribe</a>&nbsp;&nbsp;&nbsp;<a href="{{ manage_preferences_href }}" {% if module.manage_preferences_url.open_in_new_tab %}target="_blank"{% endif %} {% if module.manage_preferences_url.rel %}rel="{{ module.manage_preferences_url.rel }}"{% endif %} style="color: #ffffff; text-decoration: underline">Manage preferences</a>
                     </p>
                   </td>
                 </tr>
