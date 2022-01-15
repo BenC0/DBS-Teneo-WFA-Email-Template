@@ -7,7 +7,7 @@
             <tr>
               <td>
                 <![endif]-->
-                  <table role="presentation" style="width: 100%; max-width: 800px; min-width: 700px; border: none; border-spacing: 0; text-align: center; font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; color: #000000" align="center" bgcolor="#002858" cellspacing="0" cellpadding="0" >
+                  <table role="presentation" style="width: 100%; max-width: 800px; min-width: 800px; border: none; border-spacing: 0; text-align: center; font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; color: #000000" align="center" bgcolor="#002858" cellspacing="0" cellpadding="0" >
                     <tr>
                       <td style="text-align: center; padding: 42px 0 26px 0;">
                         <p style="font-family: sofia-pro, arial, sans-serif; font-size: 26px; font-weight: 300; color: #ffffff; margin: 0 auto;">Follow us on social media</p>
@@ -67,6 +67,31 @@
                           {% endif %}
                           <a href="{{ unsubscribe_link_all }}" target="_blank" style="color: #ffffff !important; text-decoration: underline">Unsubscribe</a>&nbsp;&nbsp;&nbsp;<a href="{{ manage_preferences_href }}" {% if module.manage_preferences_url.open_in_new_tab %}target="_blank"{% endif %} {% if module.manage_preferences_url.rel %}rel="{{ module.manage_preferences_url.rel }}"{% endif %} style="color: #ffffff; text-decoration: underline">Manage preferences</a>
                         </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 26px 30px 42px 30px; text-align: center;">
+                        <a
+                          href="{{ href }}" 
+                          {% if module.logo_link.open_in_new_tab %}target="_blank"{% endif %}
+                          {% if module.logo_link.rel %}rel="{{ module.logo_link.rel }}"{% endif %}
+                          title="Visit the website"
+                          style="text-decoration: none"
+                        >
+                          {% set href = module.logo_link.url.href %}
+                          {% if module.logo_link.url.type is equalto "EMAIL_ADDRESS" %}
+                            {% set href = "mailto:" + href %}
+                          {% endif %}
+
+                          {% set sizeAttrs = 'width="{{ module.logo_image.width }}" height="{{ module.logo_image.height }}"' %}
+                          {% if module.logo_image.size_type == 'auto' %}
+                            {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+                          {% elif module.logo_image.size_type == 'auto_custom_max' %}
+                            {% set sizeAttrs = 'width="{{ module.logo_image.max_width }}" height="{{ module.logo_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                          {% endif %}
+                          {% set loadingAttr = module.logo_image.loading != 'disabled' ? 'loading="{{ module.logo_image.loading }}"' : '' %}
+                          <img src="{{ module.logo_image.src }}" alt="{{ module.logo_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                        </a>
                       </td>
                     </tr>
                   </table>
