@@ -1,0 +1,97 @@
+{% if content.create_page %}
+  <link rel="stylesheet" href="https://use.typekit.net/dyv1pfw.css">
+  <!--[if mso | IE]>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:800px;" width="800" >
+      <tr>
+        <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+          <![endif]-->
+          <div style="background:#474747;background-color:#474747;margin:0px auto;max-width:800px;padding-bottom:0px;">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;padding-bottom:0px;" >
+              <tbody>
+                <tr>
+                  <td style="direction:ltr;font-size:0px;padding:13px 20px 14px;text-align:center;vertical-align:top;" >
+                    <!--[if mso | IE]>
+                      <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td class="" style="vertical-align:top;width:800px;" >
+                            <![endif]-->
+                              <div class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;" >
+                                <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" >
+                                  <tbody>
+                                    <tr>
+                                      <td  style="vertical-align:top;padding:0;">
+                                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%" >
+                                          <tr>
+                                            <td align="center" style="font-size:0px;padding:0;margin:0;padding-bottom:0px;word-break:break-word;" >
+                                              <div style="color: #ffffff; text-align: center; text-decoration: underline; font-size: 18px; font-family: sofia-pro, arial, sans-serif; font-weight: 300; letter-spacing: 1px;padding-bottom:0px;" >
+                                                <p style="padding-bottom:0px;margin:0px"><a href="{{view_as_page_url}}" data-viewaswebpage="true" target="_blank" style="color:#ffffff; text-decoration:underline;">View email in browser</a></p>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            <!--[if mso | IE]>
+                          </td>
+                        </tr>
+                      </table>
+                    <![endif]-->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--[if mso | IE]>
+        </td>
+      </tr>
+    </table>
+  <![endif]-->
+{% endif %}
+
+<div role="article" aria-roledescription="email" lang="en" style="text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; background:#F5F5F5; background-color: #F5F5F5;">
+  <table role="presentation" style="width: 100%; border: none; border-spacing: 0; background:#F5F5F5; background-color: #F5F5F5;" align="center" bgcolor="#F5F5F5" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="padding: 0; background:#F5F5F5; background-color: #F5F5F5; color: #000000">
+        <!--[if mso]>
+          <table role="presentation" align="center" style="width:800px;">
+            <tr>
+              <td>
+                <![endif]-->
+                  <table role="presentation" style="width: 100%; max-width: 800px; border: none; border-spacing: 0; text-align: center; font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; color: #000000" align="center" bgcolor="#F5F5F5" cellspacing="0" cellpadding="0" >
+                    <tr>
+                      <td style="padding: 51px 0 54px; text-align: center; font-size: 24px; font-weight: bold; background-color: #F5F5F5">
+                        {% set href = module.logo_link.url.href %}
+                        {% if module.logo_link.url.type is equalto "EMAIL_ADDRESS" %}
+                          {% set href = "mailto:" + href %}
+                        {% endif %}
+                        <a
+                          href="{{ href }}" 
+                          {% if module.logo_link.open_in_new_tab %}target="_blank"{% endif %}
+                          {% if module.logo_link.rel %}rel="{{ module.logo_link.rel }}"{% endif %}
+                          title="Visit the website"
+                          style="text-decoration: none"
+                        >
+                          {% set sizeAttrs = 'width="{{ module.logo_image.width }}" height="{{ module.logo_image.height }}"' %}
+                          {% if module.logo_image.size_type == 'auto' %}
+                            {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+                          {% elif module.logo_image.size_type == 'auto_custom_max' %}
+                            {% set sizeAttrs = 'width="{{ module.logo_image.max_width }}" height="{{ module.logo_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                          {% endif %}
+                          {% set loadingAttr = module.logo_image.loading != 'disabled' ? 'loading="{{ module.logo_image.loading }}"' : '' %}
+                          <img src="{{ module.logo_image.src }}" alt="{{ module.logo_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                <!--[if mso]>
+              </td>
+            </tr>
+          </table>
+        <![endif]-->
+      </td>
+    </tr>
+  </table>
+</div>

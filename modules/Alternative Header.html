@@ -1,0 +1,48 @@
+<div role="article" aria-roledescription="email" lang="en" style="text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; background-color: #F5F5F5; padding: 0 0px 40px;">
+  <table role="presentation" align="center" style="width: 700px; border: none; border-spacing: 0">
+    <tr>
+      <td valign="top" align="center" style="padding: 60px 24px 0px; background-color: #F69E0F">
+        {% if module.heading %}
+          <h1 style="font-size: 38px; line-height: 44px; font-family: neue-haas-grotesk-display, arial, sans-serif; font-size: 32px; font-weight: 200; color: #181E26;">{{ module.heading }}</h1>
+        {% endif %}
+        {% if module.richtext_field %}
+          <p style="font-size: 18px; line-height: 28px; font-family: sofia-pro, arial, sans-serif; font-weight: 200; color: #181E26; padding: 0px 21px;"> {{ module.richtext_field }} </p>
+        {% endif %}
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 40px 0 45px; background-color: #F69E0F">
+        <table bgcolor="F69E0F" border="0" cellpadding="0" cellspacing="0" align="center">
+          <tr>
+            <td align="center" valign="middle" style="padding: 12px 34px; background-color: #002858; color: #ffffff;">
+              <table>
+                <tr>
+                  <td>
+                    {% set href = module.cta_link.url.href %}
+                    {% if module.cta_link.url.type is equalto "EMAIL_ADDRESS" %}
+                      {% set href = "mailto:" + href %}
+                    {% endif %}
+                    {% set rel = [] %}
+                    {% if module.cta_link.no_follow %}
+                      {% do rel.append("nofollow") %}
+                    {% endif %}
+                    {% if module.cta_link.open_in_new_tab %}
+                      {% do rel.append("noopener") %}
+                    {% endif %}
+                    <a href="{{ href }}"
+                       {% if module.cta_link.open_in_new_tab %}target="_blank"{% endif %}
+                       {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+                       style="color: #ffffff; text-decoration: none; letter-spacing: 0.02ch; font-size: 18px; font-family: sofia-pro, arial, sans-serif; font-weight: 400;"
+                       >
+                      {{ module.cta_text }}
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>

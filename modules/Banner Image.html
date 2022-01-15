@@ -1,0 +1,15 @@
+<table style="width: 800px" border="0" cellpadding="0" cellspacing="0" width="800">
+  <tr>
+    <td style="font-size: 1px; line-height: 1px;background-color: #F5F5F5; padding: 0; width: 100%" align="center" valign="middle">
+      {% if module.image_field.src %}
+      {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
+      {% if module.image_field.size_type == 'auto' %}
+      {% elif module.image_field.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.image_field.max_width }}" height="{{ module.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading }}"' : '' %}
+      <img src="{{ module.image_field.src }}" valign="middle" align="center" alt="{{ module.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }} style="padding: 0;display: block; width: 100%; max-width: 700px; border: none; text-decoration: none">
+      {% endif %}
+    </td>
+  </tr>
+</table>
