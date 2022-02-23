@@ -10,7 +10,15 @@
                   <table role="presentation" style="width: 100%; max-width: 800px; min-width: 800px; border: none; border-spacing: 0; text-align: center; font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; color: #000000" align="center" bgcolor="#002858" cellspacing="0" cellpadding="0" >
                     <tr>
                       <td style="text-align: center; padding: 42px 0 26px 0;">
-                        <p style="font-family: sofia-pro, arial, sans-serif; font-size: 26px; font-weight: 300; color: #ffffff; margin: 0 auto;">Follow us on social media</p>
+                        <p style="font-family: sofia-pro, arial, sans-serif; font-size: 26px; font-weight: 300; color: #ffffff; margin: 0 auto;">
+                        <!--[if mso]>
+                        <span style="font-family: arial, sans-serif;">
+                        <![endif]-->
+                        Follow us on social media
+                        <!--[if mso]>
+                        </span>
+                        <![endif]-->
+                        </p>
                       </td>
                     </tr>
                     <tr>
@@ -57,7 +65,7 @@
                     <tr>
                       <td style="padding: 0 30px; color: #ffffff; font-size: 12px">
                         <p style="margin: 0; line-height: 20px; color: #ffffff !important; font-size: 12px !important; padding: 0; text-align: center;">
-                          Headquarters:
+                          
                           <br>
                           {{ site_settings.company_name }}, {{ site_settings.company_street_address_1 }}, {{ site_settings.company_street_address_2 }}, {{ site_settings.company_city }}, {{ site_settings.company_zip }}<br>{{ site_settings.company_state }}, <a href="tel:{{ module.company_phone_number }}"  style="color: #ffffff !important; text-decoration: none"> {{ module.company_phone_number }} </a>
                           <br>
@@ -65,14 +73,28 @@
                           {% if module.manage_preferences_url.url.type is equalto "EMAIL_ADDRESS" %}
                             {% set manage_preferences_href = "mailto:" + manage_preferences_href %}
                           {% endif %}
-                          <a href="{{ unsubscribe_link_all }}" target="_blank" style="color: #ffffff !important; text-decoration: underline">Unsubscribe</a>&nbsp;&nbsp;&nbsp;<a href="{{ manage_preferences_href }}" {% if module.manage_preferences_url.open_in_new_tab %}target="_blank"{% endif %} {% if module.manage_preferences_url.rel %}rel="{{ module.manage_preferences_url.rel }}"{% endif %} style="color: #ffffff; text-decoration: underline">Manage preferences</a>
+                          <a href="{{ unsubscribe_link_all }}" target="_blank" style="color: #ffffff !important; text-decoration: underline">
+                         <!--[if mso]>
+                          <span style="font-family: arial, sans-serif; color: #ffffff; text-decoration: underline">
+                         <![endif]-->
+                         Unsubscribe
+                         <!--[if mso]>
+                          </span>
+                         <![endif]--></a>&nbsp;&nbsp;&nbsp;<a href="{{ unsubscribe_link }}" {% if module.manage_preferences_url.open_in_new_tab %}target="_blank"{% endif %} {% if module.manage_preferences_url.rel %}rel="{{ module.manage_preferences_url.rel }}"{% endif %} style="color: #ffffff; text-decoration: underline">
+                         <!--[if mso]>
+                          <span style="font-family: arial, sans-serif; text-decoration: underline">
+                         <![endif]-->
+                         Manage preferences
+                         <!--[if mso]>
+                          </span>
+                         <![endif]--></a>
                         </p>
                       </td>
                     </tr>
                     <tr>
                       <td style="padding: 26px 30px 42px 30px; text-align: center;">
                         <a
-                          href="{{ href }}" 
+                          href="https://www.teneo.net/?utm_source=hubspot&utm_medium=email&utm_campaign=workfromanywhere-phase1" 
                           {% if module.logo_link.open_in_new_tab %}target="_blank"{% endif %}
                           {% if module.logo_link.rel %}rel="{{ module.logo_link.rel }}"{% endif %}
                           title="Visit the website"

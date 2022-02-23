@@ -3,10 +3,19 @@
     <tr>
       <td valign="top" align="center" style="padding: 60px 24px 0px; background-color: #ffffff">
         {% if module.heading %}
-          <h1 style="font-size: 38px; line-height: 44px; margin: 0 auto; font-family: neue-haas-grotesk-display, arial, sans-serif; font-size: 32px; font-weight: 300; color: #181E26;">{{ module.heading }}</h1>
+          <h1 style="font-size: 38px; line-height: 44px; margin: 0 auto; font-family: neue-haas-grotesk-display, arial, sans-serif; font-size: 32px; font-weight: 300; color: #181E26;">
+            <!--[if mso]>
+            <span style="font-family: arial, sans-serif;">
+            <![endif]-->
+            {{ module.heading }}
+            <!--[if mso]>
+            </span>
+            <![endif]-->
+          </h1>
         {% endif %}
           <!--[if mso]>
             <table height="20"><tr><td>&nbsp;</td></tr></table>
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet" type="text/css" />
           <![endif]-->
         {% if module.richtext_field %}
           <p style="font-size: 18px; line-height: 28px; margin: 0; font-family: sofia-pro, arial, sans-serif; font-weight: 300; color: #181E26; padding: 20px 21px 0px;"> {{ module.richtext_field }} </p>
@@ -17,7 +26,7 @@
       <td style="padding: 40px 0 45px; background-color: #ffffff">
         <table bgcolor="ffffff" border="0" cellpadding="0" cellspacing="0" align="center">
           <tr>
-            <td align="center" valign="middle" style="padding: 12px 34px; background-color: #F69E0F; color: #002858;">
+            <td align="center" valign="middle" style="padding: 12px 34px; border-radius: 23px; background-color: #F69E0F; color: #002858;">
               <table>
                 <tr>
                   <td>
@@ -35,9 +44,17 @@
                     <a href="{{ href }}"
                        {% if module.cta_link.open_in_new_tab %}target="_blank"{% endif %}
                        {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
-                       style="color: #002858;  text-decoration: none !important; letter-spacing: 0.02ch; font-size: 18px; font-family: sofia-pro, arial, sans-serif; font-weight: 400;"
+                       style="color: #002858; text-decoration: none; font-size: 18px; font-family: sofia-pro, Arial, sans-serif; font-weight: 500;"
                        >
-                      <span style="text-decoration: none;">{{ module.cta_text }}</span>
+                      <span style="color: #002858; text-decoration: none; font-size: 18px; font-family: sofia-pro, Arial, sans-serif; font-weight: 500;">
+                         <!--[if mso]>
+                          <span style="font-family: arial, sans-serif;">
+                         <![endif]-->
+                         {{ module.cta_text }}
+                         <!--[if mso]>
+                          </span>
+                         <![endif]-->
+                      </span>
                     </a>
                   </td>
                 </tr>
